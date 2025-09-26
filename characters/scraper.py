@@ -24,9 +24,11 @@ def scrape_characters() -> list[Characters]:
         next_url_to_scrape = characters_response["info"]["next"]
     return characters
 
-def save_characters(characters:list[Characters]) -> None:
+
+def save_characters(characters: list[Characters]) -> None:
     for characters in characters:
         characters.save()
+
 
 def sync_characters_with_api() -> None:
     characters = scrape_characters()
