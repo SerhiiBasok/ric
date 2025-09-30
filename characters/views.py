@@ -11,8 +11,7 @@ from characters.models import Characters
 from characters.serializers import CharacterSerializer
 
 
-@extend_schema(
-    responses={status.HTTP_200_OK: CharacterSerializer})
+@extend_schema(responses={status.HTTP_200_OK: CharacterSerializer})
 @api_view(["GET"])
 def get_random_character(request: Request) -> Response:
     """extend schema for rick and morty world"""
